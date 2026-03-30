@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Creative Developer</title>
+    <meta name="description" content="Professional portfolio of a modern web developer specializing in high-performance web applications.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-blobs"></div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">DE<span style="color: var(--accent-2)">V</span>ELOP.</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero animate">
+            <div class="hero-text">
+                <h1>Crafting <br>Digital <span>Experiences</span></h1>
+                <p>Building high-performance, aesthetically pleasing web applications with a focus on user-centric design.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="#contact" class="btn" style="border: 1px solid var(--glass-border)">Let's Talk</a>
+                </div>
+            </div>
+            <div class="hero-img">
+                <img src="assets/profile.png" alt="Profile Specialist">
+            </div>
+        </section>
+
+        <!-- About/Skills Section -->
+        <section id="skills">
+            <h2>Expertise & Skills</h2>
+            <div class="grid">
+                <div class="card glass">
+                    <i class="fab fa-react"></i>
+                    <h3>Frontend Dev</h3>
+                    <p>React, Next.js, and Modern CSS architectures (Tailwind, SCSS).</p>
+                </div>
+                <div class="card glass">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Backend Architecture</h3>
+                    <p>Node.js, PostgreSQL, and scalable microservices.</p>
+                </div>
+                <div class="card glass">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <p>Mobile-first approach for seamless cross-device experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Selected Work</h2>
+            <div class="grid">
+                <div class="card glass">
+                    <div style="width: 100%; height: 200px; background: rgba(255,255,255,0.05); border-radius: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-rocket" style="font-size: 3rem; opacity: 0.1;"></i>
+                    </div>
+                    <h3>E-Commerce platform</h3>
+                    <p>High-performance storefront with headless CMS integration.</p>
+                </div>
+                <div class="card glass">
+                    <div style="width: 100%; height: 200px; background: rgba(255,255,255,0.05); border-radius: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-wallet" style="font-size: 3rem; opacity: 0.1;"></i>
+                    </div>
+                    <h3>Fintech Dashboard</h3>
+                    <p>Real-time analytics and data visualization for financial assets.</p>
+                </div>
+                <div class="card glass">
+                    <div style="width: 100%; height: 200px; background: rgba(255,255,255,0.05); border-radius: 1rem; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-palette" style="font-size: 3rem; opacity: 0.1;"></i>
+                    </div>
+                    <h3>Design Studio</h3>
+                    <p>Creative agency landing page with sophisticated animations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="text-align: center;">
+            <h2>Start a Project</h2>
+            <div class="glass" style="padding: 4rem; max-width: 800px; margin: 0 auto;">
+                <h3>Have a vision in mind?</h3>
+                <p style="margin-bottom: 2rem;">I'm currently available for freelance work and collaborations.</p>
+                <a href="mailto:hello@example.com" class="btn btn-primary">Send an Email</a>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--glass-border);">
+        <p style="color: var(--text-low);">&copy; 2026 Developer Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar change background on scroll
+        window.onscroll = function() {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+
+        // Reveal animations on scroll
+        const observeOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observeOptions);
+
+        document.querySelectorAll('section, .card').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
